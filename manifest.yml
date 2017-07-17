@@ -1,0 +1,9 @@
+applications:
+- host: rdc-gb-shamba-quads
+  disk: 128M
+  name: rdc-gb-shamba-quads
+  command: node app.js
+  path: .
+  domain: eu-gb.mybluemix.net
+  memory: 192M
+  instances: 5
