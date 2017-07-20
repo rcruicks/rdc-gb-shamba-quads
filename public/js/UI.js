@@ -11,7 +11,7 @@
  *   http://www.eclipse.org/org/documents/edl-v10.php.
  *
  * Contributors:
- *   Bryan Boyd - Initial implementation 
+ *   Bryan Boyd - Initial implementation
  *******************************************************************************/
 
 function UI(demo) {
@@ -51,13 +51,58 @@ UI.prototype.init = function() {
 	this._mainLayer = new OpenLayers.Layer.OSM("OSM");
 	this.map.addLayer(this._mainLayer);
 
+//var featureSource = new OpenLayers.source.GeoJSON({
+//    'projection': this.map.getView().getProjection(),
+//    'url': 'https://rdc-gb-shamba.eu-gb.mybluemix.net/features/schools'
+//});
+
+var geoJSON = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Kasulu Dis": 1, "name": "Kabagwe Secondary School", "lat": -4.8455049, "long": 29.9359882, "w3w": "isemwe.wasaa.mipera", "units": 10, "capacity": 200 }, "geometry": { "type": "Point", "coordinates": [ 29.9359882, -4.8455049 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 2, "name": "Kasangezi Secondary School", "lat": -4.7658166, "long": 30.0371694, "w3w": "kujitathmini.wanaoa.udenda", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.0371694, -4.7658166 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 3, "name": "Kihenya Secondary School", "lat": -4.1780809, "long": 30.2305691, "w3w": "kukuonya.hakimo.kupambanua", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.2305691, -4.1780809 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 4, "name": "Kimenyi Secondary School", "lat": -4.5709234, "long": 30.5889437, "w3w": "kuingizwa.useremala.nyakua", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.5889437, -4.5709234 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 5, "name": "Kimwanya Secondary School", "lat": -4.3755208, "long": 30.3622609, "w3w": "zimefungwa.vitatoa.mafunzo", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.3622609, -4.3755208 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 6, "name": "Kinyaka Secondary School", "lat": -4.5070593, "long": 30.2505696, "w3w": "mwagwa.asivyo.wachapishaji", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.2505696, -4.5070593 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 7, "name": "Kurunyemi Secondary School", "lat": -4.6494613, "long": 30.3292464, "w3w": "shemeji.arithi.yamekamilika", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.3292464, -4.6494613 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 8, "name": "Makere Secondary School", "lat": -4.2804789, "long": 30.4214679, "w3w": "upishi.kunguru.vyombo", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.4214679, -4.2804789 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 9, "name": "Muyovoz Secondary School", "lat": -4.404492, "long": 30.268579, "w3w": "kuruka.utawaona.zenye", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.268579, -4.404492 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 10, "name": "Nkundutsi Secondary School", "lat": -4.3240123, "long": 30.4012114, "w3w": "yalifanya.kasema.mkono", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.4012114, -4.3240123 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 11, "name": "Ntamya Secondary School", "lat": -4.3622673, "long": 30.1894401, "w3w": "vinono.kutosha.vunjika", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.1894401, -4.3622673 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 12, "name": "Nyakitonto Secondary School", "lat": -4.2912821, "long": 30.2177132, "w3w": "husomwa.midundo.inaratibu", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.2177132, -4.2912821 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 13, "name": "Rungwe Mpya Secondary School", "lat": -4.7688508, "long": 30.2058593, "w3w": "sikukuu.kuelekea.zurura", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.2058593, -4.7688508 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 14, "name": "Rusesa Secondary School", "lat": -4.8215939, "long": 30.0082437, "w3w": "mwanasayansi.kuzitaka.kubadilishia", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.0082437, -4.8215939 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 15, "name": "Titye Secondary School", "lat": -4.6562983, "long": 30.274765, "w3w": "imetangaza.chipua.alitii", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.274765, -4.6562983 ] } },
+{ "type": "Feature", "properties": { "Kasulu Dis": 16, "name": "Zeze Secondary School", "lat": -4.9113281, "long": 30.0474822, "w3w": "hereni.ulioko.umbika", "units": null, "capacity": null }, "geometry": { "type": "Point", "coordinates": [ 30.0474822, -4.9113281 ] } }
+]
+};
+
+var featuresLayer = new OpenLayers.Layer.Markers( "Markers" );
+
+    var size = new OpenLayers.Size(50,50);
+    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+    var icon = new OpenLayers.Icon('img/mortar.png', size, offset);
+		var gj = geoJSON.features;
+    featuresLayer.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(0,0),icon));
+		for (var q in gj) {
+	    featuresLayer.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(gj[q].properties.long,gj[q].properties.lat),icon.clone()));
+		};
+
+
+// Add the layer to the map
+this.map.addLayer(featuresLayer);
+
+
+
 	this.updateCursor();
 
 	demo.location = defaults.mapLocation;
 	this.map.setCenter(
 		Utils.toOL(
 			new OpenLayers.LonLat(
-				demo.location.getCenter().lon, 
+				demo.location.getCenter().lon,
 				demo.location.getCenter().lat
 			)
 		), demo.location.defaultZoom
@@ -65,9 +110,9 @@ UI.prototype.init = function() {
 
 	if (!this.context.constructor.prototype.fillRoundedRect) {
 		this.context.constructor.prototype.fillRoundedRect = function (xx,yy, ww,hh, rad, fill, stroke) {
-			if (typeof(rad) == "undefined") rad = 5; 
+			if (typeof(rad) == "undefined") rad = 5;
 			this.beginPath();
-			this.moveTo(xx+rad, yy); 
+			this.moveTo(xx+rad, yy);
 			this.arcTo(xx+ww, yy,    xx+ww, yy+hh, rad);
 			this.arcTo(xx+ww, yy+hh, xx,    yy+hh, rad);
 			this.arcTo(xx,    yy+hh, xx,    yy,    rad);
@@ -109,7 +154,7 @@ UI.prototype.processClick_selection = function(x, y) {
 							ctx.points[i].lat = newGeo.lat;
 						}
 					})(poly);
-					
+
 					document.body.onmouseup = function() {
 						document.body.onmousemove = defaultOnMouseMove;
 					}
@@ -206,7 +251,7 @@ UI.prototype.processClick_selection = function(x, y) {
 		document.body.onmouseup = function(e) {
 			document.body.onmousemove = defaultOnMouseMove;
 			if (!e.pageX || (demo.ui._clickStart.x == e.pageX && demo.ui._clickStart.y == e.pageY)) {
-				// we did a single-click (without panning) on an empty map space, so de-select 
+				// we did a single-click (without panning) on an empty map space, so de-select
 				demo.ui.deselect();
 			}
 			this._bMoving = false;
@@ -271,16 +316,16 @@ UI.prototype.zoomIn = function() {
 UI.prototype.trackSelected = function() {
 	if (this.selectedObj && this.trackOn) {
 		var xy = Utils.geoToXY(this.selectedObj.geo);
-		var newGeo = Utils.xyToGeo(xy.x, xy.y);// + deltaY); 
+		var newGeo = Utils.xyToGeo(xy.x, xy.y);// + deltaY);
 		this.map.setCenter(Utils.toOL(new OpenLayers.LonLat(newGeo.lon, newGeo.lat)));
 		this.updateViewport();
 	}
 }
 
 UI.prototype._doSlide = function(remaining) {
-	if (remaining <= 0) { 
+	if (remaining <= 0) {
 		this.trackOn = true;
-		return; 
+		return;
 	}
 	if (remaining == 10) {
 		$(".popover.left").slideDown();
@@ -345,11 +390,11 @@ UI.prototype.getMaxLat = function() {
 	return this._viewport.lat.max;
 }
 
-UI.prototype.getLonWidth = function() { 
+UI.prototype.getLonWidth = function() {
 	return this.getMaxLon() - this.getMinLon();
 }
 
-UI.prototype.getLatHeight = function() { 
+UI.prototype.getLatHeight = function() {
 	return this.getMaxLat() - this.getMinLat();
 }
 
@@ -417,4 +462,3 @@ UI.prototype.touchCancel = function(event) {
 	console.log("touchCancel: " + event.touches[0].clientX + ", " + event.touches[0].clientY);
 	event.preventDefault();
 }
-
